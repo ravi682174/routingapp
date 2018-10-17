@@ -1,0 +1,33 @@
+<form [formGroup]="myForm">
+
+ <div formArrayName="accounts">
+<div *ngFor="let account of accountForms.controls;let i=index" [formGroupName]="i">
+<mat-form-field appearance="outline">
+    <mat-label>Account Id</mat-label>
+  <input matInput placeholder="Account Id" formControlName="acctId">
+</mat-form-field> 
+<mat-form-field appearance="outline">
+    <mat-label>Account No</mat-label>
+  <input matInput placeholder="Account No" formControlName="acctNo">
+</mat-form-field> 
+<mat-form-field appearance="outline">
+    <mat-label>Account Name</mat-label>
+  <input matInput placeholder="Account Name" formControlName="acctName">
+</mat-form-field> 
+<mat-form-field appearance="outline">
+    <mat-label>Account Effective Date</mat-label>
+  <input matInput placeholder="Account Effective Date" formControlName="acctEffDt">
+</mat-form-field> 
+<mat-form-field appearance="outline">
+    <mat-label>Account Expiry Date</mat-label>
+  <input matInput placeholder="Account Expiry Date" formControlName="acctExpDt">
+</mat-form-field> 
+<mat-form-field appearance="outline">
+    <mat-label>Balance Type</mat-label>
+  <input matInput placeholder="Balance Type" formControlName="balTyp">
+</mat-form-field> 
+<button mat-raised-button color="warn" (click)="deleteAccounts(i)">Delete Account</button>
+</div>
+ </div>
+ <button mat-raised-button color="primary" (click)="addAccount()">Add Account</button>
+</form>
